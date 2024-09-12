@@ -4,7 +4,7 @@
  * for Adventures in Algorithms
  * at Menlo School in Atherton, CA
  *
- * Completed by: [YOUR NAME HERE]
+ * Completed by: Stefan Perkovic
  *
  */
 
@@ -16,5 +16,11 @@ public class HighwaysAndHospitals {
      */
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
         return 0;
+
+
+
+
+
     }
+
 }
