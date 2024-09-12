@@ -1,3 +1,7 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * Highways & Hospitals
  * A puzzle created by Zach Blick
@@ -26,6 +30,29 @@ public class HighwaysAndHospitals {
             connections[end][start] = true;
         }
 
+        boolean[] visited = new boolean[n + 1];
+        Stack<Integer> stack = new Stack<Integer>();
+        int[][] sections = new int[n][n];
+        for (int i = 1; i <= n; i++){
+            if(!visited[i]){
+                stack.push(i);
+                visited[i] = true;
+                while (!stack.isEmpty()){
+                    int city = stack.pop();
+
+                    for (int j = i; j <= n; j++){
+                        if (connections[city][j]){
+                            if (!visited[j]){
+                                stack.push(j);
+                                visited[j] = true;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
 
 
         return 0;
