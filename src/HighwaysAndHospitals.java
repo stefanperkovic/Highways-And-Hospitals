@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -32,7 +33,7 @@ public class HighwaysAndHospitals {
 
         boolean[] visited = new boolean[n + 1];
         Stack<Integer> stack = new Stack<Integer>();
-        int[][] sections = new int[n][n];
+        ArrayList<Long> sub_trees = new ArrayList<>(Long);
         for (int i = 1; i <= n; i++){
             if(!visited[i]){
                 stack.push(i);
