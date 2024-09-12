@@ -1,9 +1,8 @@
 Name: YOUR NAME HERE
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date    |    Time     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Update |
+|:--------|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| 
+| Sep 11  | 5:40 - 6:10 | I started thinking about how to approach the problem set. I decided that it would be nice if we could get rid of the extraneous solution when hospitals are cheaper than highways at the start. However, I realized I couldn't just multiple hospitalCost * cities.length because the cities function is the highway links, so I have left it their for now but will change later. Afterwards I decided that it would be simpler to check if their was a connection between cities if we just had a boolean array that would tells us so I made that. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
