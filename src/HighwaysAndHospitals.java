@@ -19,21 +19,33 @@ public class HighwaysAndHospitals {
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
 
         if (highwayCost >= hospitalCost){
-            return hospitalCost * n;
+            return (long) hospitalCost * n;
         }
         int[] roots = new int[n + 1];
-        for (int i = 0; i < cities[0].length; i++){
-            if (roots[cities[i][0]] != roots[cities[i][1]]){
-                roots[cities[i][1]] = cities[i][0];
+        for (int i = 0; i < cities.length; i++){
+            int city1 = cities[i][0];
+            int city2 = cities[i][1];
+
+            while (roots[city1] != 0){
+                city1 = roots[city1];
+            }
+            while (roots[city2] != 0){
+                city2 = roots[city2];
+            }
+
+            if (city1 != city2){
+                roots[city2] = city1;
             }
 
         }
+        int subgraphs = 0;
+        for (int i = 1; i < roots.length; i++){
+            if (roots[i] == 0){
+                subgraphs++;
+            }
+        }
 
-
-
-
-
-
+        return (long) highwayCost * (n - subgraphs) + (long)hospitalCost * subgraphs;
 
     }
 
