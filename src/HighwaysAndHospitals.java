@@ -28,45 +28,45 @@ public class HighwaysAndHospitals {
             int city2 = cities[i][1];
 
             int x = city1;
-            while (roots[x] > 0){
+            while (roots[x] != 0){
 
                 x = roots[x];
             }
-            while (roots[city1] > 0){
+            while (roots[city1] != 0){
                 int temp = roots[city1];
                 roots[city1] = x;
                 city1 = temp;
             }
 
             int z = city2;
-            while (roots[z] > 0){
+            while (roots[z] != 0){
                 z = roots[x];
             }
-            while (roots[city2] > 0){
+            while (roots[city2] != 0){
                 int temp = roots[city2];
                 roots[city2] = x;
                 city2 = temp;
             }
 
             if (x != z){
-                int a = roots[x];
-                int b = roots[z];
-                if (a >= b){
-                    roots[x] += roots[z] - 1;
-                    roots[z] = x;
-                }
-                else{
-                    roots[z] += roots[x] - 1;
-                    roots[x] = z;
-                }
-
+//                int a = roots[x];
+//                int b = roots[z];
+//                if (a >= b){
+//                    roots[x] += roots[z] - 1;
+//                    roots[z] = x;
+//                }
+//                else{
+//                    roots[z] += roots[x] - 1;
+//                    roots[x] = z;
+//                }
+                roots[z] = x;
 
             }
 
         }
         int subgraphs = 0;
         for (int i = 1; i < roots.length; i++){
-            if (roots[i] < 0){
+            if (roots[i] == 0){
                 subgraphs++;
             }
         }
